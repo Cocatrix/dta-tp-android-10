@@ -10,10 +10,10 @@
         android:id="@+id/image_next_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="visible"
-        app:srcCompat="@android:drawable/ic_media_next"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:visibility="visible"
+        app:srcCompat="@android:drawable/ic_menu_upload" />
 
     <ImageView
         android:id="@+id/image_next_3"
@@ -22,7 +22,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/image_next_4"
         android:visibility="visible"
-        app:srcCompat="@android:drawable/ic_media_next" />
+        app:srcCompat="@android:drawable/ic_menu_upload" />
 
     <ImageView
         android:id="@+id/image_next_2"
@@ -31,7 +31,7 @@
         android:layout_alignEnd="@+id/image_next_3"
         android:layout_below="@+id/image_next_3"
         android:visibility="visible"
-        app:srcCompat="@android:drawable/ic_media_next" />
+        app:srcCompat="@android:drawable/ic_menu_upload" />
 
     <ImageView
         android:id="@+id/image_next_1"
@@ -40,7 +40,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/image_next_2"
         android:visibility="visible"
-        app:srcCompat="@android:drawable/ic_media_next" />
+        app:srcCompat="@android:drawable/ic_menu_upload" />
 
     <TextView
         android:id="@+id/stack_number_4"
@@ -102,7 +102,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/image_next_1"
-        app:srcCompat="@android:drawable/ic_media_ff" />
+        app:srcCompat="@android:drawable/ic_menu_send" />
 
     <TextView
         android:id="@+id/current_number"
@@ -125,121 +125,121 @@
             android:id="@+id/number_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/number_1" />
 
         <Button
             android:id="@+id/number_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/number_2" />
 
         <Button
             android:id="@+id/number_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/number_3" />
 
         <Button
             android:id="@+id/operator_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/operator_add" />
 
         <Button
             android:id="@+id/number_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/number_4" />
 
         <Button
             android:id="@+id/number_5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/number_5" />
 
         <Button
             android:id="@+id/number_6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/number_6" />
 
         <Button
             android:id="@+id/operator_substract"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/operator_substract" />
 
         <Button
             android:id="@+id/number_7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/number_7" />
 
         <Button
             android:id="@+id/number_8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/number_8" />
 
         <Button
             android:id="@+id/number_9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/number_9" />
 
         <Button
             android:id="@+id/operator_times"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
-
-        <Button
-            android:id="@+id/action_del_one"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button" />
-
-        <Button
-            android:id="@+id/number_0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/operator_multiply" />
 
         <Button
             android:id="@+id/char_point"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/char_point" />
+
+        <Button
+            android:id="@+id/number_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/number_0" />
+
+        <Button
+            android:id="@+id/action_del_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/action_del_one" />
 
         <Button
             android:id="@+id/operator_divide"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/operator_divide" />
 
         <Button
             android:id="@+id/action_clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/action_clear" />
 
         <Button
             android:id="@+id/action_pop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/action_pop" />
 
         <Button
             android:id="@+id/action_swap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/action_swap" />
 
         <Button
             android:id="@+id/action_enter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/action_enter" />
     </GridLayout>
 
 </RelativeLayout>
