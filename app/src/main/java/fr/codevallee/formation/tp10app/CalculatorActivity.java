@@ -15,6 +15,7 @@ public class CalculatorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
+        // TODO - Improve view on landscape
         Log.d("STATE", "Begin");
     }
 
@@ -90,6 +91,7 @@ public class CalculatorActivity extends AppCompatActivity {
     }
 
     public void click_del(View view) {
+        // TODO - Copy CLEAR and do just one character
     }
 
     public void click_clear(View view) {
@@ -98,15 +100,18 @@ public class CalculatorActivity extends AppCompatActivity {
         TextView currentNumber = (TextView) findViewById(R.id.current_number);
         currentNumber.setText("");
         // Empty the stack in Java and TextViews
-        this.stack.empty();
+        this.stack.clear();
+        // TODO - Correct bug : CLEAR only clears head of stack now
         this.refreshUIStack();
         Log.d("STATE", "Emptied");
     }
 
     public void click_pop(View view) {
+        // TODO - Delete last element of stack
     }
 
     public void click_swap(View view) {
+        // TODO - Swap last two elements of stack
     }
 
     public void click_enter(View view) {
