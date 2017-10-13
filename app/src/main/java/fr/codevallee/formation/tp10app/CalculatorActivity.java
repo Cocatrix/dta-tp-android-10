@@ -10,7 +10,6 @@ import java.util.Stack;
 
 public class CalculatorActivity extends AppCompatActivity implements View.OnClickListener {
     private Stack<Float> stack;
-    private Float currentNumber;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,10 +47,43 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
 
     }
 
+    public void click_2(View view) {
+    }
+
+    public void click_3(View view) {
+    }
+
+    public void click_4(View view) {
+    }
+
+    public void click_5(View view) {
+    }
+
+    public void click_6(View view) {
+    }
+
+    public void click_7(View view) {
+    }
+
+    public void click_8(View view) {
+    }
+
+    public void click_9(View view) {
+    }
+
     public void click_0(View view) {
     }
 
-    public void click_operator(View view) {
+    public void click_plus(View view) {
+    }
+
+    public void click_minus(View view) {
+    }
+
+    public void click_times(View view) {
+    }
+
+    public void click_divide(View view) {
     }
 
     public void click_point(View view) {
