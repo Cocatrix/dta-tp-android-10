@@ -79,7 +79,7 @@ public class CalculatorActivity extends AppCompatActivity {
          */
         if (currentNumber.getText().equals("")) {
             currentNumber.setText("0" + point);
-        } else if (currentNumber.getText().toString().endsWith(point)) {
+        } else if (currentNumber.getText().toString().contains(point)) {
             Log.d("STATE", "POINT not added, already is last character");
             return;
         }else {
