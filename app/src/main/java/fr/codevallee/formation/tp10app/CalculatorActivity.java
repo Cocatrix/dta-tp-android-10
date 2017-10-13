@@ -40,7 +40,7 @@ public class CalculatorActivity extends AppCompatActivity {
             Log.d("STATE", "Short stack, no operation done");
             return;
         }
-        this.click_enter();
+        this.click_enter(view);
         if(this.stack.size()<2) {
             Log.d("STATE", "Short stack, no operation done because previous entry invalid");
             return;
@@ -79,17 +79,20 @@ public class CalculatorActivity extends AppCompatActivity {
          */
         if (currentNumber.getText().equals("")) {
             currentNumber.setText("0" + point);
-        } else {
+        } else if (currentNumber.getText().toString().endsWith(point)) {
+            Log.d("STATE", "POINT not added, already is last character");
+            return;
+        }else {
             currentNumber.setText(currentNumber.getText() + point);
         }
 
         Log.d("STATE", "POINT added to currentText");
     }
 
-    public void click_del() {
+    public void click_del(View view) {
     }
 
-    public void click_clear() {
+    public void click_clear(View view) {
         Log.d("ACTION", "Clicked on CLEAR");
         // Empty TextView currentNumber
         TextView currentNumber = (TextView) findViewById(R.id.current_number);
@@ -100,13 +103,13 @@ public class CalculatorActivity extends AppCompatActivity {
         Log.d("STATE", "Emptied");
     }
 
-    public void click_pop() {
+    public void click_pop(View view) {
     }
 
-    public void click_swap() {
+    public void click_swap(View view) {
     }
 
-    public void click_enter() {
+    public void click_enter(View view) {
         /**
          * Empty the current number written and puts it in stack, then call refreshUIStack().
          * Does nothing if entry equals "" or "." or "0" or "0.".
