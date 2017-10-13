@@ -22,30 +22,6 @@ public class CalculatorActivity extends AppCompatActivity {
 
     }
 
-    public void click_2(View view) {
-    }
-
-    public void click_3(View view) {
-    }
-
-    public void click_4(View view) {
-    }
-
-    public void click_5(View view) {
-    }
-
-    public void click_6(View view) {
-    }
-
-    public void click_7(View view) {
-    }
-
-    public void click_8(View view) {
-    }
-
-    public void click_9(View view) {
-    }
-
     public void click_0(View view) {
     }
 
