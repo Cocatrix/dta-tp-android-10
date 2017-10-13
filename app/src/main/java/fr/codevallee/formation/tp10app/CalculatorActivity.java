@@ -65,6 +65,7 @@ public class CalculatorActivity extends AppCompatActivity {
     public void click_clear(View view) {
         String tag = (String) view.getTag();
         Log.d("STATE - ", "Clicked on " + tag);
+        // Empty TextView currentNumber
         TextView currentNumber = (TextView) findViewById(R.id.current_number);
         currentNumber.setText("");
         // TODO - Empty the stack (in Java and in TextViews)
