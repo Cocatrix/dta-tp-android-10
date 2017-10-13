@@ -1,3 +1,24 @@
 <resources>
-    <string name="app_name">TP10App</string>
+    <string name="app_name">Polish calculator</string>
+    <string name="number_1">1</string>
+    <string name="number_2">2</string>
+    <string name="number_3">3</string>
+    <string name="number_4">4</string>
+    <string name="number_5">5</string>
+    <string name="number_6">6</string>
+    <string name="number_7">7</string>
+    <string name="number_8">8</string>
+    <string name="number_9">9</string>
+    <string name="number_0">0</string>
+    <string name="char_point">,</string>
+    <string name="operator_add">+</string>
+    <string name="operator_substract">-</string>
+    <string name="operator_multiply">×</string>
+    <string name="operator_divide">÷</string>
+    <string name="action_del_one">DEL</string>
+    <string name="action_clear">CLEAR</string>
+    <string name="action_pop">POP</string>
+    <string name="action_swap">SWAP</string>
+    <string name="action_enter">ENTER</string>
+    <string name="nothing" />
 </resources>
