@@ -18,26 +18,13 @@ public class CalculatorActivity extends AppCompatActivity {
         Log.d("STATE - ", "Begin");
     }
 
-    public void click_1_to_9(View view) {
+    public void click_0_to_9(View view) {
         String number = (String) view.getTag();
         Log.d("STATE - ", "Clicked on " + number);
         TextView currentNumber = (TextView) findViewById(R.id.current_number);
         /* Converting to Integer and then String allows to remove unwanted zeros. Indeed
          * "0"+"3" = "03"
          * String(Integer("0"+"3") = "3"
-         */
-        Integer totalPrintedNumber = Integer.parseInt(currentNumber.getText().toString() + number);
-        currentNumber.setText(totalPrintedNumber.toString());
-        Log.d("STATE - ", number + " added to currentText");
-    }
-
-    public void click_0(View view) {
-        String number = "0";
-        Log.d("STATE - ", "Clicked on " + number);
-        TextView currentNumber = (TextView) findViewById(R.id.current_number);
-        /* Converting to Integer and then String allows to remove unwanted zeros. Indeed
-         * "0"+"0" = "00"
-         * String(Integer("0"+"0") = "0"
          */
         Integer totalPrintedNumber = Integer.parseInt(currentNumber.getText().toString() + number);
         currentNumber.setText(totalPrintedNumber.toString());
