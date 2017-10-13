@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.Stack;
 
 public class CalculatorActivity extends AppCompatActivity {
-    private Stack<Float> stack;
+    private Stack<String> stack = new Stack<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,12 +22,14 @@ public class CalculatorActivity extends AppCompatActivity {
         String number = (String) view.getTag();
         Log.d("STATE - ", "Clicked on " + number);
         TextView currentNumber = (TextView) findViewById(R.id.current_number);
-        /* Converting to Integer and then String allows to remove unwanted zeros. Indeed
-         * "0"+"3" = "03"
-         * String(Integer("0"+"3") = "3"
+        /* Adding Strings. Just need not to take zero if that is the only character
          */
-        Float totalPrintedNumber = Float.parseFloat(currentNumber.getText().toString() + number);
-        currentNumber.setText(totalPrintedNumber.toString());
+        if (currentNumber.getText().equals("0")) {
+            currentNumber.setText(number);
+        } else {
+            currentNumber.setText(currentNumber.getText() + number);
+        }
+
         Log.d("STATE - ", number + " added to currentText");
     }
 
@@ -70,10 +72,14 @@ public class CalculatorActivity extends AppCompatActivity {
     public void click_enter(View view) {
         TextView TextCurrentNumber = (TextView) findViewById(R.id.current_number);
         String currentNumber = TextCurrentNumber.getText().toString();
-        if (currentNumber.equals("")&&currentNumber.equals(Float.parseFloat("0"))) {
-            this.stack.add(Float.parseFloat(currentNumber));
+        if (!(currentNumber.equals("")||currentNumber.equals("0"))) {
+            this.stack.push(currentNumber);
+            this.refreshUIStack();
+        } else if (currentNumber.endsWith(".")) {
+            this.stack.push(currentNumber + "0");
             this.refreshUIStack();
         }
+        TextCurrentNumber.setText("");
     }
     
     public void refreshUIStack() {
@@ -89,12 +95,12 @@ public class CalculatorActivity extends AppCompatActivity {
         TextView[] stackNumbers = {stackNumber1,stackNumber2,stackNumber3,stackNumber4};
         // We write 4 times maximum, or just the size of the stack if 4 or less elements
         Integer numberWritings = ((this.stack.size()<4)?this.stack.size():4);
-        Integer iWritings,iDeletings;
+        Integer iWritings = 0,iDeletions;
         for (iWritings=0;iWritings<numberWritings;iWritings++) {
-            stackNumbers[iWritings].setText(this.stack.elementAt(iWritings).toString());
+            stackNumbers[iWritings].setText(this.stack.elementAt(iWritings));
         }
         // We empty the rest
-        for (iDeletings=iWritings;iDeletings<4;iDeletings++) {
+        for (iDeletions=iWritings;iDeletions<4;iDeletions++) {
             stackNumbers[iWritings].setText("");
         }
 
