@@ -150,7 +150,8 @@
             android:id="@+id/operator_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="click_plus"
+            android:onClick="click_operator"
+            android:tag="@string/operator_add"
             android:text="@string/operator_add" />
 
         <Button
@@ -181,7 +182,8 @@
             android:id="@+id/operator_substract"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="click_minus"
+            android:onClick="click_operator"
+            android:tag="@string/operator_substract"
             android:text="@string/operator_substract" />
 
         <Button
@@ -212,7 +214,8 @@
             android:id="@+id/operator_times"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="click_times"
+            android:onClick="click_operator"
+            android:tag="@string/operator_multiply"
             android:text="@string/operator_multiply" />
 
         <Button
@@ -220,6 +223,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="click_point"
+            android:tag="@string/char_point"
             android:text="@string/char_point" />
 
         <Button
@@ -241,7 +245,8 @@
             android:id="@+id/operator_divide"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="click_divide"
+            android:onClick="click_operator"
+            android:tag="@string/operator_divide"
             android:text="@string/operator_divide" />
 
         <Button

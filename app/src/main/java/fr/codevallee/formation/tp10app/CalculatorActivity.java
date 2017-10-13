@@ -15,12 +15,12 @@ public class CalculatorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
-        Log.d("STATE - ", "Begin");
+        Log.d("STATE", "Begin");
     }
 
     public void click_0_to_9(View view) {
         String number = (String) view.getTag();
-        Log.d("STATE - ", "Clicked on " + number);
+        Log.d("ACTION", "Clicked on " + number);
         TextView currentNumber = (TextView) findViewById(R.id.current_number);
         /* Adding Strings. Just need not to take zero if that is the only character
          */
@@ -30,56 +30,102 @@ public class CalculatorActivity extends AppCompatActivity {
             currentNumber.setText(currentNumber.getText() + number);
         }
 
-        Log.d("STATE - ", number + " added to currentText");
+        Log.d("STATE", number + " added to currentText");
     }
 
-    public void click_plus(View view) {
-    }
+    public void click_operator(View view) {
+        String point = (String) view.getTag();
+        Log.d("ACTION", "Clicked on " + point);
+        if(this.stack.size()<1) {
+            Log.d("STATE", "Short stack, no operation done");
+            return;
+        }
+        this.click_enter();
+        if(this.stack.size()<2) {
+            Log.d("STATE", "Short stack, no operation done because previous entry invalid");
+            return;
+        }
+        Float f1 = Float.parseFloat(this.stack.pop());
+        Float f2 = Float.parseFloat(this.stack.pop());
+        Float fRes;
 
-    public void click_minus(View view) {
-    }
+        switch (point) {
+            case "+":
+                fRes = f2 + f1;
 
-    public void click_times(View view) {
-    }
-
-    public void click_divide(View view) {
+                break;
+            case "-":
+                fRes = f2 - f1;
+                break;
+            case "×":
+                fRes = f2 * f1;
+                break;
+            case "÷":
+                fRes = f2 / f1;
+                break;
+            default:
+                fRes = null;
+        }
+        this.stack.add(0,fRes.toString());
+        Log.d("STATE", "Operation " + point + "done");
+        this.refreshUIStack();
     }
 
     public void click_point(View view) {
+        String point = (String) view.getTag();
+        Log.d("ACTION", "Clicked on POINT");
+        TextView currentNumber = (TextView) findViewById(R.id.current_number);
+        /* Adding Strings. Just need to add zero if nothing has been typed
+         */
+        if (currentNumber.getText().equals("")) {
+            currentNumber.setText("0" + point);
+        } else {
+            currentNumber.setText(currentNumber.getText() + point);
+        }
+
+        Log.d("STATE", "POINT added to currentText");
     }
 
-    public void click_del(View view) {
+    public void click_del() {
     }
 
-    public void click_clear(View view) {
-        String tag = (String) view.getTag();
-        Log.d("STATE - ", "Clicked on " + tag);
+    public void click_clear() {
+        Log.d("ACTION", "Clicked on CLEAR");
         // Empty TextView currentNumber
         TextView currentNumber = (TextView) findViewById(R.id.current_number);
         currentNumber.setText("");
         // Empty the stack in Java and TextViews
         this.stack.empty();
         this.refreshUIStack();
-        Log.d("STATE - ", "Emptied");
+        Log.d("STATE", "Emptied");
     }
 
-    public void click_pop(View view) {
+    public void click_pop() {
     }
 
-    public void click_swap(View view) {
+    public void click_swap() {
     }
 
-    public void click_enter(View view) {
+    public void click_enter() {
+        /**
+         * Empty the current number written and puts it in stack, then call refreshUIStack().
+         * Does nothing if entry equals "" or "." or "0" or "0.".
+         * Adds a zero if entry ends with "." (but not "." or "0." handled before).
+         */
+        Log.d("ACTION", "Clicked on ENTER");
         TextView TextCurrentNumber = (TextView) findViewById(R.id.current_number);
         String currentNumber = TextCurrentNumber.getText().toString();
-        if (!(currentNumber.equals("")||currentNumber.equals("0"))) {
-            this.stack.push(currentNumber);
-            this.refreshUIStack();
-        } else if (currentNumber.endsWith(".")) {
-            this.stack.push(currentNumber + "0");
+        // Check whether we should add the entry
+        if (!(currentNumber.equals("")||currentNumber.equals("0")||currentNumber.equals(".")||currentNumber.equals("0."))) {
+            if (currentNumber.endsWith(".")) { // Check whether we need to add zero at the end
+                this.stack.add(0, currentNumber + "0");
+            } else {
+                this.stack.add(0,currentNumber);
+            }
             this.refreshUIStack();
         }
         TextCurrentNumber.setText("");
+        Log.d("STATE", "ENTER managed");
     }
     
     public void refreshUIStack() {
@@ -87,6 +133,7 @@ public class CalculatorActivity extends AppCompatActivity {
          * Rewrites in TextViews every value of the stack, up to the 4 first ones.
          * If the size is less than 4, empty the rest.
          */
+        Log.d("ACTION", "Refreshing");
         // this.stack is regarded as up-to-date here
         TextView stackNumber4 = (TextView) findViewById(R.id.stack_number_4);
         TextView stackNumber3 = (TextView) findViewById(R.id.stack_number_3);
@@ -103,6 +150,6 @@ public class CalculatorActivity extends AppCompatActivity {
         for (iDeletions=iWritings;iDeletions<4;iDeletions++) {
             stackNumbers[iWritings].setText("");
         }
-
+        Log.d("STATE", "Refreshing done");
     }
 }
