@@ -126,6 +126,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="click_1_to_9"
+            android:tag="number"
             android:text="@string/number_1" />
 
         <Button
@@ -133,6 +134,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="click_1_to_9"
+            android:tag="number"
             android:text="@string/number_2" />
 
         <Button
@@ -140,6 +142,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="click_1_to_9"
+            android:tag="number"
             android:text="@string/number_3" />
 
         <Button
@@ -154,6 +157,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="click_1_to_9"
+            android:tag="number"
             android:text="@string/number_4" />
 
         <Button
@@ -161,6 +165,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="click_1_to_9"
+            android:tag="number"
             android:text="@string/number_5" />
 
         <Button
@@ -168,6 +173,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="click_1_to_9"
+            android:tag="number"
             android:text="@string/number_6" />
 
         <Button
@@ -182,6 +188,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="click_1_to_9"
+            android:tag="number"
             android:text="@string/number_7" />
 
         <Button
@@ -189,6 +196,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="click_1_to_9"
+            android:tag="number"
             android:text="@string/number_8" />
 
         <Button
@@ -196,6 +204,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="click_1_to_9"
+            android:tag="number"
             android:text="@string/number_9" />
 
         <Button
