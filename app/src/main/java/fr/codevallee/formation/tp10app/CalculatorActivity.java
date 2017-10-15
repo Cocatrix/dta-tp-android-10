@@ -37,12 +37,12 @@ public class CalculatorActivity extends AppCompatActivity {
     public void click_operator(View view) {
         String point = (String) view.getTag();
         Log.d("ACTION", "Clicked on " + point);
-        if(this.stack.size()<1) {
+        if (this.stack.size() < 1) {
             Log.d("STATE", "Short stack, no operation done");
             return;
         }
         this.click_enter(view);
-        if(this.stack.size()<2) {
+        if (this.stack.size() < 2) {
             Log.d("STATE", "Short stack, no operation done because previous entry invalid");
             return;
         }
@@ -53,7 +53,6 @@ public class CalculatorActivity extends AppCompatActivity {
         switch (point) {
             case "+":
                 fRes = f2 + f1;
-
                 break;
             case "-":
                 fRes = f2 - f1;
@@ -91,10 +90,25 @@ public class CalculatorActivity extends AppCompatActivity {
     }
 
     public void click_del(View view) {
-        // TODO - Copy CLEAR and do just one character
+        /**
+         * If the entry is not empty, removes the last entered number (or point).
+         */
+         Log.d("ACTION", "Clicked on DEL");
+        // Get TextView currentNumber and remove last character
+        TextView currentNumber = (TextView) findViewById(R.id.current_number);
+        String currentNb = currentNumber.getText().toString();
+        if (currentNb.length() < 2) {
+            currentNumber.setText("");
+        } else {
+            currentNumber.setText(currentNb.substring(0,currentNb.length()-2));
+        }
+        Log.d("STATE", "DEL done");
     }
 
     public void click_clear(View view) {
+        /**
+         * Clears the entry and the stack.
+         */
         Log.d("ACTION", "Clicked on CLEAR");
         // Empty TextView currentNumber
         TextView currentNumber = (TextView) findViewById(R.id.current_number);
@@ -107,11 +121,34 @@ public class CalculatorActivity extends AppCompatActivity {
     }
 
     public void click_pop(View view) {
-        // TODO - Delete last element of stack
+        /**
+         * If the stack has one element or more, the first is removed.
+         */
+        Log.d("ACTION", "Clicked on POP");
+        if (stack.empty()) {
+            Log.d("STATE", "Nothing to pop");
+        } else {
+            this.stack.pop();
+            this.refreshUIStack();
+            Log.d("STATE", "Poped one element");
+        }
     }
 
     public void click_swap(View view) {
-        // TODO - Swap last two elements of stack
+        /**
+         * If the stack has two or more elements, swaps the two first elements.
+         */
+        Log.d("ACTION", "Clicked on SWAP");
+        if (stack.size() < 2) {
+            Log.d("STATE", "Nothing to swap");
+        } else {
+            String s1 = this.stack.pop();
+            String s2 = this.stack.pop();
+            this.stack.add(0,s1);
+            this.stack.add(0,s2);
+            this.refreshUIStack();
+            Log.d("STATE", "Swapped first two elements");
+        }
     }
 
     public void click_enter(View view) {
