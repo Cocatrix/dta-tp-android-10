@@ -18,6 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="click_0_to_9"
+            android:tag="@string/number_1"
             android:text="@string/number_1" />
 
         <Button
@@ -25,6 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="click_0_to_9"
+            android:tag="@string/number_2"
             android:text="@string/number_2" />
 
         <Button
@@ -32,6 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="click_0_to_9"
+            android:tag="@string/number_3"
             android:text="@string/number_3" />
 
         <Button
@@ -39,6 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="click_operator"
+            android:tag="@string/operator_add"
             android:text="@string/operator_add" />
 
         <Button
@@ -46,6 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="click_0_to_9"
+            android:tag="@string/number_4"
             android:text="@string/number_4" />
 
         <Button
@@ -53,6 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="click_0_to_9"
+            android:tag="@string/number_5"
             android:text="@string/number_5" />
 
         <Button
@@ -60,6 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="click_0_to_9"
+            android:tag="@string/number_6"
             android:text="@string/number_6" />
 
         <Button
@@ -67,6 +74,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="click_operator"
+            android:tag="@string/operator_substract"
             android:text="@string/operator_substract" />
 
         <Button
@@ -74,6 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="click_0_to_9"
+            android:tag="@string/number_7"
             android:text="@string/number_7" />
 
         <Button
@@ -81,6 +90,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="click_0_to_9"
+            android:tag="@string/number_8"
             android:text="@string/number_8" />
 
         <Button
@@ -88,6 +98,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="click_0_to_9"
+            android:tag="@string/number_9"
             android:text="@string/number_9" />
 
         <Button
@@ -95,6 +106,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="click_operator"
+            android:tag="@string/operator_multiply"
             android:text="@string/operator_multiply" />
 
         <Button
@@ -102,6 +114,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="click_point"
+            android:tag="@string/char_point"
             android:text="@string/char_point" />
 
         <Button
@@ -123,6 +136,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="click_operator"
+            android:tag="@string/operator_divide"
             android:text="@string/operator_divide" />
 
         <Button
@@ -130,6 +144,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="click_clear"
+            android:tag="@string/action_clear"
             android:text="@string/action_clear" />
 
         <Button

@@ -199,6 +199,4 @@ public class CalculatorActivity extends AppCompatActivity {
     }
 
     // TODO - Save state when we look at landscape
-
-    // TODO - Check that buttons work in landscape mode !
 }
