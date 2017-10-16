@@ -102,6 +102,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/image_next_1"
+        android:onClick="click_enter"
         app:srcCompat="@android:drawable/ic_menu_send" />
 
     <TextView
@@ -128,7 +129,6 @@
             android:onClick="click_0_to_9"
             android:tag="@string/number_1"
             android:text="@string/number_1" />
-        <!--<tag android:id="@+id/value" android:value="@string/number_5" />-->
 
         <Button
             android:id="@+id/number_2"
