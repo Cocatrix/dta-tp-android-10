@@ -65,7 +65,7 @@ public class CalculatorActivity extends AppCompatActivity {
             default:
                 fRes = null;
         }
-        this.stack.add(0,fRes.toString());
+        this.stack.push(fRes.toString());
         Log.d("STATE", "Operation " + point + "done");
         this.refreshUIStack();
     }
@@ -126,7 +126,7 @@ public class CalculatorActivity extends AppCompatActivity {
         if (stack.empty()) {
             Log.d("STATE", "Nothing to pop");
         } else {
-            this.stack.remove(0);
+            this.stack.pop();
             this.refreshUIStack();
             Log.d("STATE", "Poped one element");
         }
@@ -142,8 +142,8 @@ public class CalculatorActivity extends AppCompatActivity {
         } else {
             String s1 = this.stack.pop();
             String s2 = this.stack.pop();
-            this.stack.add(0,s2);
-            this.stack.add(0,s1);
+            this.stack.push(s1);
+            this.stack.push(s2);
             this.refreshUIStack();
             Log.d("STATE", "Swapped first two elements");
         }
@@ -161,9 +161,9 @@ public class CalculatorActivity extends AppCompatActivity {
         // Check whether we should add the entry
         if (!(currentNumber.equals("")||currentNumber.equals("0")||currentNumber.equals(".")||currentNumber.equals("0."))) {
             if (currentNumber.endsWith(".")) { // Check whether we need to add zero at the end
-                this.stack.add(0, currentNumber + "0");
+                this.stack.push(currentNumber + "0");
             } else {
-                this.stack.add(0,currentNumber);
+                this.stack.push(currentNumber);
             }
             this.refreshUIStack();
         }
@@ -187,7 +187,7 @@ public class CalculatorActivity extends AppCompatActivity {
         Integer numberWritings = ((this.stack.size()<4)?this.stack.size():4);
         Integer iWritings = 0,iDeletions;
         for (iWritings=0;iWritings<numberWritings;iWritings++) {
-            stackNumbers[iWritings].setText(this.stack.elementAt(iWritings));
+            stackNumbers[numberWritings-1-iWritings].setText(this.stack.elementAt(iWritings));
         }
         // We empty the rest
         Log.d("ACTION","iWritings = " + iWritings.toString());
