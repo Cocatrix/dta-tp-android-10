@@ -198,7 +198,6 @@ public class CalculatorActivity extends AppCompatActivity {
         Log.d("STATE", "Refreshing done");
     }
 
-    // TODO - Save state when we look at landscape
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         TextView currentNumberWritten = (TextView) findViewById(R.id.current_number);
         currentNumberWritten.setText(savedInstanceState.getString("current"));
