@@ -122,6 +122,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="click_0_to_9"
+            android:tag="@string/number_0"
             android:text="@string/number_0" />
 
         <Button

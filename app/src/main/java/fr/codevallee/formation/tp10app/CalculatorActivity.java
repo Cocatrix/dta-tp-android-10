@@ -199,4 +199,19 @@ public class CalculatorActivity extends AppCompatActivity {
     }
 
     // TODO - Save state when we look at landscape
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        TextView currentNumberWritten = (TextView) findViewById(R.id.current_number);
+        currentNumberWritten.setText(savedInstanceState.getString("current"));
+        this.stack = (Stack) savedInstanceState.getSerializable("stack");
+        super.onRestoreInstanceState(savedInstanceState);
+        refreshUIStack();
+    }
+
+    protected void onSaveInstanceState(Bundle outState) {
+        TextView currentNumberWritten = (TextView) findViewById(R.id.current_number);
+        outState.putSerializable("stack", this.stack);
+        outState.putString("current", currentNumberWritten.getText().toString());
+        super.onSaveInstanceState(outState);
+        refreshUIStack();
+    }
 }
