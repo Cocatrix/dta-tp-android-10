@@ -208,6 +208,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/image_next_1"
         android:layout_toEndOf="@+id/grid"
+        android:onClick="click_enter"
         app:srcCompat="@android:drawable/ic_media_ff" />
 
     <TextView
