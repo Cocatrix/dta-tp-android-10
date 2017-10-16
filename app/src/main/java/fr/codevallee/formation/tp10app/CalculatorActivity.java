@@ -15,7 +15,6 @@ public class CalculatorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
-        // TODO - Improve view on landscape
         Log.d("STATE", "Begin");
     }
 
@@ -115,7 +114,6 @@ public class CalculatorActivity extends AppCompatActivity {
         currentNumber.setText("");
         // Empty the stack in Java and TextViews
         this.stack.clear();
-        // TODO - Correct bug : CLEAR only clears head of stack now
         this.refreshUIStack();
         Log.d("STATE", "Emptied");
     }
@@ -199,4 +197,6 @@ public class CalculatorActivity extends AppCompatActivity {
         }
         Log.d("STATE", "Refreshing done");
     }
+
+    // TODO - Save state when we look at landscape
 }
