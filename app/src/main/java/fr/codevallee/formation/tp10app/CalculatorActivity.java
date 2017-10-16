@@ -100,7 +100,7 @@ public class CalculatorActivity extends AppCompatActivity {
         if (currentNb.length() < 2) {
             currentNumber.setText("");
         } else {
-            currentNumber.setText(currentNb.substring(0,currentNb.length()-2));
+            currentNumber.setText(currentNb.substring(0,currentNb.length()-1));
         }
         Log.d("STATE", "DEL done");
     }
@@ -128,7 +128,7 @@ public class CalculatorActivity extends AppCompatActivity {
         if (stack.empty()) {
             Log.d("STATE", "Nothing to pop");
         } else {
-            this.stack.pop();
+            this.stack.remove(0);
             this.refreshUIStack();
             Log.d("STATE", "Poped one element");
         }
@@ -144,8 +144,8 @@ public class CalculatorActivity extends AppCompatActivity {
         } else {
             String s1 = this.stack.pop();
             String s2 = this.stack.pop();
-            this.stack.add(0,s1);
             this.stack.add(0,s2);
+            this.stack.add(0,s1);
             this.refreshUIStack();
             Log.d("STATE", "Swapped first two elements");
         }
@@ -192,8 +192,10 @@ public class CalculatorActivity extends AppCompatActivity {
             stackNumbers[iWritings].setText(this.stack.elementAt(iWritings));
         }
         // We empty the rest
+        Log.d("ACTION","iWritings = " + iWritings.toString());
         for (iDeletions=iWritings;iDeletions<4;iDeletions++) {
-            stackNumbers[iWritings].setText("");
+            Log.d("ACTION","Removing element" + iDeletions.toString());
+            stackNumbers[iDeletions].setText("");
         }
         Log.d("STATE", "Refreshing done");
     }
